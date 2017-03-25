@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    base(href="/")
+    title= "Thermometer"
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    script(src="node_modules/rxjs/bundles/Rx.js")
+    script(src="/socket.io/socket.io.js")
+    script(src="/client/thermometer.js")
+    link(rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css")
+  body
+    div(class="container")
+      h1 Thermometer!
+    div
+      button(onclick="startStop();") Start Probe
+    app

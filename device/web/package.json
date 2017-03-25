@@ -1,0 +1,34 @@
+{
+  "name": "thermometer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobsakson/Thermometer.git"
+  },
+  "author": "Bob Sakson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bobsakson/Thermometer/issues"
+  },
+  "homepage": "https://github.com/bobsakson/Thermometer#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.6",
+    "dnode": "^1.2.2",
+    "express": "^4.13.4",
+    "font-awesome": "^4.6.3",
+    "promise": "^7.1.1",
+    "pug": "^2.0.0-beta3",
+    "request": "^2.81.0",
+    "rxjs": "5.0.0-beta.12",
+    "socket.io": "^1.4.6"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
