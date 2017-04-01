@@ -7,7 +7,7 @@ namespace Thermometer.Web.ViewModels
     {
         public int Id { get;set; }
         public double Temperature { get; set; }
-        public DateTime ReadingTime { get; set; }
+        public string ReadingTime { get; set; }
         public int ProbeId { get; set; }
         public int SessionId { get; set; }
     }

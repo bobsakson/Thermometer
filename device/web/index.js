@@ -11,6 +11,9 @@ app.use(bodyParser.json());
 var indexRoutes = require('./routes/index.js');
 app.use('/', indexRoutes);
 
+var graphRoutes = require('./routes/graph.js');
+app.use('/graph', graphRoutes);
+
 app.use('/client', express.static(path.resolve(__dirname, 'client')))
 app.use('/node_modules', express.static(path.resolve(__dirname, 'node_modules')))
 
