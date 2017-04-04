@@ -19,6 +19,9 @@ app.use('/graph', graphRoutes);
 var apiProbeReadingRoutes = require('./api/probeReadings.js');
 app.use('/api/probeReadings', apiProbeReadingRoutes);
 
+var apiSessionRoutes = require('./api/sessions.js');
+app.use('/api/sessions', apiSessionRoutes);
+
 app.use('/client', express.static(path.resolve(__dirname, 'client')))
 app.use('/node_modules', express.static(path.resolve(__dirname, 'node_modules')))
 
