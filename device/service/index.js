@@ -12,15 +12,13 @@ var sessionId = 1;
 
 var saveReadingToDB = function(channel, fahrenheit, celsius, kelvin) {
     var post_data = {
-        "id": "0",
         "temperature": fahrenheit,
-        "readingTime":  (new Date()).toJSON(),
         "probeId": probes[channel - 1], //TODO: Figure this out, won't work beyond simulation.
         "sessionId": sessionId
     };
 
     var post_options = {
-      url: 'http://localhost:5000/api/ProbeReading',
+      url: 'http://localhost:3000/api/probeReadings',
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'

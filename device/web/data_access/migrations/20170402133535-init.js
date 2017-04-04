@@ -16,13 +16,13 @@ exports.setup = function(options, seedLink) {
 
 exports.up = function(db) {
   return db.createTable('sessions', {
-    id: { type: 'int', primaryKey: true, unsigned: true },
+    id: { type: 'int', primaryKey: true, unsigned: true, autoIncrement: true },
     sessionDate: 'timestamp'
   })
   .then(
     function(result) {
       db.createTable('probes', {
-        id: { type: 'int', primaryKey: true, unsigned: true },
+        id: { type: 'int', primaryKey: true, unsigned: true, autoIncrement: true },
         name: 'string'
       });
     },
@@ -33,7 +33,7 @@ exports.up = function(db) {
   .then(
     function(result) {
       db.createTable('probereadings', {
-        id: { type: 'int', primaryKey: true, unsigned: true },
+        id: { type: 'int', primaryKey: true, unsigned: true, autoIncrement: true },
         temperature: 'decimal',
         probeId: {
                     type: 'int',
