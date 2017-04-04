@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var sessionRepo = require('../data_access/sessionRepository.js');
 
 function connectToDatabase() {
     var connection = mysql.createConnection({
@@ -16,45 +17,24 @@ function connectToDatabase() {
 }
 
 router.route('')
-
     .get(function(req, res) {
-        var connection = connectToDatabase();
-
-        connection.query('SELECT id, sessionDate FROM sessions', function(err, rows, fields) {
-            if (err) throw err;
-
-            res.status(200).json(rows);
-            connection.end();
+        sessionRepo.get(function(sessions) {
+            res.status(200).json(sessions);
         });
+
     });
 
 router.route('/:sessionid')
-
     .get(function(req, res) {
-        var connection = connectToDatabase();
-
-        connection.query('SELECT id, sessionDate FROM sessions WHERE id = ' + req.params.sessionid, function(err, rows, fields) {
-            if (err) throw err;
-
-            res.status(200).json(rows);
-            connection.end();
+        sessionRepo.getById(req.params.sessionid, function(sessions) {
+            res.status(200).json(sessions);
         });
     });    
 
 router.route('')    
     .post(function(req, res) {
-        var connection = connectToDatabase();
-
-        connection.query('INSERT INTO sessions (sessionDate) VALUES ("' + req.body.sessiondate + '")', function(err, rows, fields) {
-            if(err) throw err;
-            
-            connection.query('SELECT id, sessionDate FROM sessions WHERE id = LAST_INSERT_ID()', function(e, r, f) {
-                if(e) throw e;
-                
-                // Created
-                res.status(201).json(r);
-                connection.end();
-            });
+        sessionRepo.add(req.body.sessiondate, function(session) {
+                res.status(201).json(session);
         });
     });
 
