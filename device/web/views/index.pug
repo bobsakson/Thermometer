@@ -6,6 +6,7 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     script(src="node_modules/rxjs/bundles/Rx.js")
     script(src="/socket.io/socket.io.js")
+    script(src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous")
     script(src="/client/thermometer.js")
     link(rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css")
     link(rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css")
@@ -14,4 +15,10 @@ html(lang="en")
       h1 Thermometer!
     div
       button(onclick="startStop();") Start Probe
+    div
+      label Probe #1:&nbsp;
+      span(class="probe1")
+    div
+      label Probe #2:&nbsp;
+      span(class="probe2")
     app

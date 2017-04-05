@@ -10,5 +10,14 @@ function startStop() {
         socket.emit('stopPollingProbe');
     }
 
+    socket.on('temperatureReading', function(reading) {
+        temperatureReading(reading);
+    });
+
     isProbeRunning = !isProbeRunning;
+}
+
+function temperatureReading(reading) {
+    console.log(reading);
+    $('.probe' + reading.channel).text(reading.currentTemperature);
 }
