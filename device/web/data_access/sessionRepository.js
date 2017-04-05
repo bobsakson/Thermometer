@@ -9,7 +9,7 @@ var get = function(cb) {
         cb(rows);
         connection.end();
     });
-}
+};
 
 var getById = function(id, cb) {
     var connection = database.connect();
@@ -20,7 +20,7 @@ var getById = function(id, cb) {
         cb(rows);
         connection.end();
     });
-}
+};
 
 var add = function(sessiondate, cb) {
     var connection = database.connect();
@@ -36,7 +36,7 @@ var add = function(sessiondate, cb) {
                 connection.end();
             });
         });
-}
+};
 
 module.exports.get = get;
 module.exports.getById = getById;

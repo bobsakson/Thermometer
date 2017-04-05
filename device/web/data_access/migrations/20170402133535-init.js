@@ -35,6 +35,7 @@ exports.up = function(db) {
       db.createTable('probereadings', {
         id: { type: 'int', primaryKey: true, unsigned: true, autoIncrement: true },
         temperature: 'decimal',
+        readingTime: 'timestamp',
         probeId: {
                     type: 'int',
                     unsigned: true,
