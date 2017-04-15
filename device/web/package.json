@@ -1,10 +1,11 @@
 {
   "name": "thermometer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/bobsakson/Thermometer#readme",
   "dependencies": {
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
     "body-parser": "^1.17.1",
     "bootstrap": "^3.3.6",
     "db-migrate-mysql": "^1.1.10",
@@ -27,12 +30,20 @@
     "mysql": "^2.13.0",
     "promise": "^7.1.1",
     "pug": "^2.0.0-beta3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
     "request": "^2.81.0",
     "rxjs": "5.0.0-beta.12",
     "socket.io": "^1.4.6"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.3.3",
     "db-migrate": "^0.10.0-beta.20",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "webpack": "^2.3.3"
   }
 }

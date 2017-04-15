@@ -290,3 +290,6 @@ __pycache__/
 
 #.env config
 .env
+
+# compiled JS
+device/web/client/dist

@@ -8,6 +8,7 @@ html(lang="en")
     script(src="/socket.io/socket.io.js")
     script(src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous")
     script(src="/client/thermometer.js")
+    
     link(rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css")
     link(rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css")
   body
@@ -21,4 +22,6 @@ html(lang="en")
     div
       label Probe #2:&nbsp;
       span(class="probe2")
-    app
+    div(id="root")
+
+    script(src="/client/dist/bundle.js")
