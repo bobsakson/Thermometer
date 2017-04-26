@@ -21,11 +21,11 @@ var logtemp = function(r, channel) {
     console.log('Channel ' + channel + ' temp ' + tempF);
 }
 
- adc.poll(0, 1000, logtemp(reading, 0));
- adc.poll(1, 1000, logtemp(reading, 1));
- adc.poll(2, 1000, logtemp(reading, 2));
- adc.poll(3, 1000, logtemp(reading, 3));
- adc.poll(4, 1000, logtemp(reading, 4));
- adc.poll(5, 1000, logtemp(reading, 5));
- adc.poll(6, 1000, logtemp(reading, 6));
- adc.poll(7, 1000, logtemp(reading, 7));
+ adc.poll(0, 1000, function(reading) { logtemp(reading, 0)});
+ adc.poll(1, 1000, function(reading) { logtemp(reading, 1)});
+ adc.poll(2, 1000, function(reading) { logtemp(reading, 2)});
+ adc.poll(3, 1000, function(reading) { logtemp(reading, 3)});
+ adc.poll(4, 1000, function(reading) { logtemp(reading, 4)});
+ adc.poll(5, 1000, function(reading) { logtemp(reading, 5)});
+ adc.poll(6, 1000, function(reading) { logtemp(reading, 6)});
+ adc.poll(7, 1000, function(reading) { logtemp(reading, 7)});
