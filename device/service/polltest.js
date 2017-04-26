@@ -1,8 +1,8 @@
 var mcp3008 = require('mcp3008.js');
 var adc = new mcp3008();
 
-var logtemp = function(reading, channel) {
-    var volts = (reading * 3.3) / 1024;
+var logtemp = function(r, channel) {
+    var volts = (r * 3.3) / 1024;
     var ohms = ((1 / volts) * 3300) - 1000;
     var lnohm = Math.log1p(ohms);
     
@@ -22,10 +22,10 @@ var logtemp = function(reading, channel) {
 }
 
  adc.poll(0, 1000, logtemp(reading, 0));
- adc.poll(0, 1000, logtemp(reading, 1));
- adc.poll(0, 1000, logtemp(reading, 2));
- adc.poll(0, 1000, logtemp(reading, 3));
- adc.poll(0, 1000, logtemp(reading, 4));
- adc.poll(0, 1000, logtemp(reading, 5));
- adc.poll(0, 1000, logtemp(reading, 6));
- adc.poll(0, 1000, logtemp(reading, 7));
+ adc.poll(1, 1000, logtemp(reading, 1));
+ adc.poll(2, 1000, logtemp(reading, 2));
+ adc.poll(3, 1000, logtemp(reading, 3));
+ adc.poll(4, 1000, logtemp(reading, 4));
+ adc.poll(5, 1000, logtemp(reading, 5));
+ adc.poll(6, 1000, logtemp(reading, 6));
+ adc.poll(7, 1000, logtemp(reading, 7));
