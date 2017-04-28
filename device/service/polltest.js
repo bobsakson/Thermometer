@@ -29,3 +29,20 @@ var logtemp = function(r, channel) {
 //  adc.poll(5, 1000, function(reading) { logtemp(reading, 5)});
 //  adc.poll(6, 1000, function(reading) { logtemp(reading, 6)});
  adc.poll(7, 1000, function(reading) { logtemp(reading, 7)});
+
+ var opts = {
+  width: 128,
+  height: 64,
+  dcPin: 23,
+  rstPin : 24
+};
+
+var font = require('oled-font-5x7');
+
+var oled = new oled(opts);
+oled.begin(function(){
+  // do cool oled things here
+  //oled.turnOnDisplay();
+    oled.setCursor(1, 1);
+    oled.writeString(font, 1, 'Cats and dogs are really cool animals, you know.', 1, true);
+});
