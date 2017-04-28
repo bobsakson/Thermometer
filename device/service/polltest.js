@@ -30,7 +30,8 @@ var logtemp = function(r, channel) {
 //  adc.poll(6, 1000, function(reading) { logtemp(reading, 6)});
  adc.poll(7, 1000, function(reading) { logtemp(reading, 7)});
 
- var opts = {
+var oled = require('oled-spi');
+var opts = {
   width: 128,
   height: 64,
   dcPin: 23,
