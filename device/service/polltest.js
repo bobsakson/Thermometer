@@ -35,7 +35,8 @@ var opts = {
   width: 128,
   height: 64,
   dcPin: 23,
-  rstPin : 24
+  rstPin : 24,
+  device: "/dev/spidev0.1"
 };
 
 var font = require('oled-font-5x7');
