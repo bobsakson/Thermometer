@@ -20,7 +20,7 @@ var opts = {
 };
 
 var intervalObject = new Array();
-var oled = null;
+var oleddisplay = null;
 var adc = null;
 
 var isSimulationMode = function() {
@@ -75,9 +75,9 @@ var logtemp = function(readings, channel) {
     var tempF = tempC * (9 / 5) + 32;
 
     if(!isSimulationMode()) {
-        oled.clearDisplay();
-        oled.setCursor(1, 1);
-        oled.writeString(font, 1, 'Channel ' + channel + ' temp ' + tempF, 1, true);
+        oleddisplay.clearDisplay();
+        oleddisplay.setCursor(1, 1);
+        oleddisplay.writeString(font, 1, 'Channel ' + channel + ' temp ' + tempF, 1, true);
     }
 
     console.log('Channel ' + channel + ' temp ' + tempF);
@@ -107,8 +107,8 @@ if(isSimulationMode()) {
     });
 }
 else {
-    oled = new oled(opts);
-    oled.begin(function() {
+    oleddisplay = new oled(opts);
+    oleddisplay.begin(function() {
         oled.setCursor(1, 1);
         oled.writeString(font, 1, 'Initializing...', 1, true);
     });
