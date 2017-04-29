@@ -109,8 +109,8 @@ if(isSimulationMode()) {
 else {
     oleddisplay = new oled(opts);
     oleddisplay.begin(function() {
-        oled.setCursor(1, 1);
-        oled.writeString(font, 1, 'Initializing...', 1, true);
+        oleddisplay.setCursor(1, 1);
+        oleddisplay.writeString(font, 1, 'Initializing...', 1, true);
     });
 
     adc = new mcp3008();
