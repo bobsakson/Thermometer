@@ -62,7 +62,7 @@ var takeReading = function(r, channel) {
 }
 
 var isWithinStdDev = function(reading, avg, stddev) {
-    return abs(reading - avg) <= stddev;
+    return Math.abs(reading - avg) <= stddev;
 };
 
 var logtemp = function(readings) {
